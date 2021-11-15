@@ -67,8 +67,9 @@ async function vote(parent, args, context, info) {
   });
 
   if (Boolean(vote)) {
+    
     throw new Error(
-      `Already voted for link: ${args.linkId}`
+      `Already voted for link Dad: ${args.linkId}`
     );
   }
 
