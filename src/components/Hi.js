@@ -1,7 +1,7 @@
-
 import React, { Component } from 'react'
 import { AUTH_TOKEN } from '../constants'
-const name = 'Brian';
+
+const name = 'Mr.H';
 
 
 class Hi extends Component {

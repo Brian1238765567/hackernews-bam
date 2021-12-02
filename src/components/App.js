@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import Header from './Header'
-import { Switch, Route, Redirect } from 'react-router-dom'
 import LinkList from './LinkList'
 import CreateLink from './CreateLink'
+import Header from './Header'
 import Login from './Login'
 import Search from './Search'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import Hi from './Hi'
 
 class App extends Component {
@@ -25,8 +25,7 @@ class App extends Component {
         </div>
       </div>
     )
-  }  
-  
+  }
 }
 
 export default App
