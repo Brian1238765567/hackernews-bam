@@ -70,7 +70,7 @@ class Link extends Component {
               : ''} */}
 
             {this.props.link.votes[0]
-              ? '  Height: first: '+this.props.link.votes[0].user.Height + ' last: '+this.props.link.votes[this.props.link.votes.length-1].user.Height
+              ? '  Height of poster:'+this.props.link.postedBy.Height 
               : ''}
           </div>
         </div>
