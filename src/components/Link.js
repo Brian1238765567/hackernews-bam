@@ -8,6 +8,7 @@ const VOTE_MUTATION = gql`
     vote(linkId: $linkId) {
       id
       link {
+        id
         votes {
           id
           user {
@@ -58,7 +59,7 @@ class Link extends Component {
             {timeDifferenceForDate(this.props.link.createdAt)}  {' '}
   {/* below ternary operator check if any votes, shows last voter */}
             {this.props.link.votes[0] 
-              ? ' ____ last voter: '+this.props.link.votes[0].user.name
+              ? ' ____  vote ids: first '+this.props.link.votes[0].id + ' last ' + +this.props.link.votes[this.props.link.votes.length -1].id 
               : ' '}
           </div>
         </div>
