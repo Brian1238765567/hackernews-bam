@@ -37,30 +37,41 @@ class Link extends Component {
     update={(store, { data: { vote } }) =>
       this.props.updateStoreAfterVote(store, vote, this.props.link.id)
     }
-    >
+  >
     {voteMutation => (
       <div className="ml1 gray f11" onClick={voteMutation}>
         ▲
       </div>
     )}
-    </Mutation>  
+  </Mutation>  
   )}
 </div>
 
         <div className="ml1">
           <div>
-          <a href={this.props.link.url} target="_blank">{this.props.link.description}</a>
+            <a href={this.props.link.url} target="_blank">{this.props.link.description}</a>
           </div>
           <div className="f6 lh-copy gray">
-            {this.props.link.votes.length} votes | by{' '}
+            {this.props.link.votes.length} votes 
+            {/* ~ first voter  */}
+            {/* {this.props.link.votes[0] 
+              ? this.props.link.votes[0].user.name 
+              : 'hi'}{''} | by{' '} */}
             {this.props.link.postedBy
               ? this.props.link.postedBy.name
               : 'Unknown'}{' '}
-            {timeDifferenceForDate(this.props.link.createdAt)}  {' '}
-  {/* below ternary operator check if any votes, shows last voter */}
-            {this.props.link.votes[0] 
-              ? ' ____  vote ids: first '+this.props.link.votes[0].id + ' last ' + +this.props.link.votes[this.props.link.votes.length -1].id 
-              : ' '}
+            {timeDifferenceForDate(this.props.link.createdAt)}
+            {this.props.link.votes[0]
+              ? ' ___ first voter: '+this.props.link.votes[0].user.name + ' last voter: '+this.props.link.votes[this.props.link.votes.length-1].user.name
+              : ''}
+            {/* below ternary operator is new */}
+            {/* {this.props.link.votes[0]
+              ? ' ___user names: first '+this.props.link.votes[0].user.name + ' last '+this.props.link.votes[this.props.link.votes.length-1].user.name
+              : ''} */}
+
+            {this.props.link.votes[0]
+              ? '  Height: first: '+this.props.link.votes[0].user.Height + ' last: '+this.props.link.votes[this.props.link.votes.length-1].user.Height
+              : ''}
           </div>
         </div>
       </div>

@@ -39,8 +39,9 @@ type User {
   id: ID!
   name: String!
   email: String!
-  links: [Link!]!
   group: Int
+  Height: Int
+  links: [Link!]!
 }
 
 type Link {

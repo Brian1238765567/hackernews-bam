@@ -23,6 +23,7 @@ model User {
   email    String @unique
   password String
   group    Int @default(1)
+  Height         Int @default(150)
   links    Link[]
   votes    Vote[]
 }
@@ -33,6 +34,5 @@ model Vote {
   linkId Int
   user   User @relation(fields: [userId], references: [id])
   userId Int
-
   @@unique([linkId, userId])
 }
