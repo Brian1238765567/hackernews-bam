@@ -74,7 +74,7 @@ async function vote(parent, args, context, info) {
       }
     });
     context.pubsub.publish('NEW_VOTE', newVote);
-  
+
     return newVote;
     // throw new Error(
     //   `Already voted for link: ${args.linkId}`
