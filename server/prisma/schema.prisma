@@ -14,7 +14,7 @@ model Link {
   url         String
   postedBy    User     @relation(fields: [postedById], references: [id])
   postedById  Int
-  tag         String   @default("a")
+  tag         String   @default("super")
   votes       Vote[]
 }
 
